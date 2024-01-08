@@ -14,3 +14,12 @@ nav > a {
 main {
     min-height: 100vh;
 }
+main > ol {
+    list-style: none;
+    padding-left: 0;
+}
+article > aside > ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
