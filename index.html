@@ -10,7 +10,7 @@ footer = subprocess.run(["cog", "_footer.component"], capture_output=True, encod
 
 with open("_main.template") as file:
     cog.outl()
-    cog.outl(file.read().format(title=title, home="", blog="/blog", page_title=page_title, main=main, footer=footer))
+    cog.outl(file.read().format(title=title, home='', blog=' href="/blog"', page_title=page_title, main=main, footer=footer))
 ]]]-->
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ with open("_main.template") as file:
     <body>
         <header>
             <nav>
-                <a href="">Home</a>
+                <a>Home</a>
                 <a href="https://github.com/transmuter-lp" target="_blank">GitHub</a>
                 <a href="/blog">Blog</a>
             </nav>
