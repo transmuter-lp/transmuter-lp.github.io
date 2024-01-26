@@ -1,3 +1,18 @@
+<!--[[[cog
+import cog
+import subprocess
+
+title = "The Transmuter Project Blog"
+page_title = "The Transmuter Project Blog"
+
+main = subprocess.run(["cog", "_index.main.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+footer = subprocess.run(["cog", "_footer.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+
+with open("../_main.template") as file:
+    cog.outl()
+    cog.outl(file.read().format(title=title, home="/", blog="", page_title=page_title, main=main, footer=footer))
+]]]-->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -12,12 +27,13 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="https://github.com/transmuter-lp" target="_blank">GitHub</a>
-                <a>Blog</a>
+                <a href="">Blog</a>
             </nav>
             <h1>The Transmuter Project Blog</h1>
             <hr>
         </header>
         <main>
+
             <ol>
                 <li>
                     <article>
@@ -32,11 +48,16 @@
                     </article>
                 </li>
             </ol>
+
         </main>
         <footer>
             <hr>
+
             <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">The Transmuter Project Blog &copy; 2024 is licensed under <a href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"></a></p>
+
         </footer>
         <script src="/dark-mode.js"></script>
     </body>
 </html>
+
+<!--[[[end]]]-->
