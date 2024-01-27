@@ -1,27 +1,34 @@
 <!--[[[cog
+import cog
 import ssg
-
-post_name = ssg.component_name()
 
 post_title = "Test"
 post_author_link = "https://github.com/natanjunges"
 post_author_name = "Natan Junges"
 post_date = "Jan 8, 2024"
 
-title = f"{post_title} - The Transmuter Project Blog"
-page_title = "The Transmuter Project Blog"
+post_full = post_full != "False" if "post_full" in globals() else True
+post_name = ssg.component_name()
 
 main = ssg.generate_component(
     "_post.main.component",
+    post_full=post_full,
     post_name=post_name,
     post_title=post_title,
     post_author_link=post_author_link,
     post_author_name=post_author_name,
     post_date=post_date
 )
-footer = ssg.generate_component("_footer.component")
 
-ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
+if post_full:
+    title = f"{post_title} - The Transmuter Project Blog"
+    page_title = "The Transmuter Project Blog"
+
+    footer = ssg.generate_component("_footer.component")
+
+    ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
+else:
+    cog.out(main)
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -46,10 +53,14 @@ ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' h
 <!--
 import ssg
 
-post_article = ssg.generate_component(f"_{post_name}.article.component")
+post_full = post_full != "False"
+post_title = post_title if post_full else f'<a href="{post_name}.html">{post_title}</a>'
+
+post_article = ssg.generate_component(f"_{post_name}.article.component", [] if post_full else [0])
 
 ssg.format_template(
     "_post.main.template",
+    [] if post_full else [0],
     post_title=post_title,
     post_author_link=post_author_link,
     post_author_name=post_author_name,
@@ -67,6 +78,7 @@ ssg.format_template(
     </aside>
 <p>This is a test post in this blog.</p>
 </article>
+<!--*-->
 <script src="https://giscus.app/client.js"
         data-repo="transmuter-lp/transmuter-lp.github.io"
         data-repo-id="R_kgDOLBlxcA"

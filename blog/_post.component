@@ -1,0 +1,33 @@
+<!--[[[cog
+import cog
+import ssg
+
+post_title = ""
+post_author_link = ""
+post_author_name = ""
+post_date = ""
+
+post_full = post_full != "False" if "post_full" in globals() else True
+post_name = ssg.component_name()
+
+main = ssg.generate_component(
+    "_post.main.component",
+    post_full=post_full,
+    post_name=post_name,
+    post_title=post_title,
+    post_author_link=post_author_link,
+    post_author_name=post_author_name,
+    post_date=post_date
+)
+
+if post_full:
+    title = f"{post_title} - The Transmuter Project Blog"
+    page_title = "The Transmuter Project Blog"
+
+    footer = ssg.generate_component("_footer.component")
+
+    ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
+else:
+    cog.out(main)
+]]]-->
+<!--[[[end]]]-->

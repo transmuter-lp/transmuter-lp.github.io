@@ -1,14 +1,15 @@
 <ol>
-    <li>
-        <article>
-            <h2><a href="test.html">Test</a></h2>
-            <aside>
-                <ul>
-                    <li>By <a href="https://github.com/natanjunges" target="_blank">Natan Junges</a></li>
-                    <li><time>Jan 8, 2024</time></li>
-                </ul>
-            </aside>
-            <p>This is a test post in this blog.</p>
-        </article>
-    </li>
+<!--[[[cog
+import cog
+import os
+import ssg
+
+for filename in os.listdir("."):
+    if os.path.isfile(filename) and not filename.startswith("_") and filename.endswith(".html") and filename != "index.html":
+        post = ssg.generate_component(filename, post_full=False)
+        cog.outl('<li>')
+        cog.outl(post)
+        cog.outl('</li>')
+]]]-->
+<!--[[[end]]]-->
 </ol>
