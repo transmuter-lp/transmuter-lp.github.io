@@ -4,12 +4,11 @@ import ssg
 title = "The Transmuter Project Blog"
 page_title = "The Transmuter Project Blog"
 
-main = ssg.include_component("_index.main.component")
-footer = ssg.include_component("_footer.component")
+main = ssg.generate_component("_index.main.component")
+footer = ssg.generate_component("_footer.component")
 
 ssg.format_template("../_main.template", title=title, home=' href="/"', blog='', page_title=page_title, main=main, footer=footer)
 ]]]-->
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -30,31 +29,26 @@ ssg.format_template("../_main.template", title=title, home=' href="/"', blog='',
             <hr>
         </header>
         <main>
-
-            <ol>
-                <li>
-                    <article>
-                        <h2><a href="test.html">Test</a></h2>
-                        <aside>
-                            <ul>
-                                <li>By <a href="https://github.com/natanjunges" target="_blank">Natan Junges</a></li>
-                                <li><time>Jan 8, 2024</time></li>
-                            </ul>
-                        </aside>
-                        <p>This is a test post in this blog.</p>
-                    </article>
-                </li>
-            </ol>
-
+<ol>
+    <li>
+        <article>
+            <h2><a href="test.html">Test</a></h2>
+            <aside>
+                <ul>
+                    <li>By <a href="https://github.com/natanjunges" target="_blank">Natan Junges</a></li>
+                    <li><time>Jan 8, 2024</time></li>
+                </ul>
+            </aside>
+            <p>This is a test post in this blog.</p>
+        </article>
+    </li>
+</ol>
         </main>
         <footer>
             <hr>
-
-            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">The Transmuter Project Blog &copy; 2024 is licensed under <a href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"></a></p>
-
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">The Transmuter Project Blog &copy; 2024 is licensed under <a href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"></a></p>
         </footer>
         <script src="/dark-mode.js"></script>
     </body>
 </html>
-
 <!--[[[end]]]-->

@@ -1,14 +1,14 @@
-            <ol>
-                <li>
-                    <article>
-                        <h2><a href="test.html">Test</a></h2>
-                        <aside>
-                            <ul>
-                                <li>By <a href="https://github.com/natanjunges" target="_blank">Natan Junges</a></li>
-                                <li><time>Jan 8, 2024</time></li>
-                            </ul>
-                        </aside>
-                        <p>This is a test post in this blog.</p>
-                    </article>
-                </li>
-            </ol>
+<ol>
+    <li>
+        <article>
+            <h2><a href="test.html">Test</a></h2>
+            <aside>
+                <ul>
+                    <li>By <a href="https://github.com/natanjunges" target="_blank">Natan Junges</a></li>
+                    <li><time>Jan 8, 2024</time></li>
+                </ul>
+            </aside>
+            <p>This is a test post in this blog.</p>
+        </article>
+    </li>
+</ol>

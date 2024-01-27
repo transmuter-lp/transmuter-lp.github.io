@@ -8,7 +8,7 @@ def component_name() -> str:
     return os.path.splitext(os.path.basename(cog.inFile))[0]
 
 
-def include_component(filename: str, **kwargs: dict[str, str]) -> str:
+def generate_component(filename: str, **kwargs: str) -> str:
     args = ["cog", "-I", os.path.dirname(__file__)]
 
     for arg in kwargs.items():
@@ -21,10 +21,10 @@ def include_component(filename: str, **kwargs: dict[str, str]) -> str:
         .stdout.replace("<!--[[[cog", "<!--")
         .replace("<!--[[[end]]]-->", "<!---->")
         .replace("]]]-->", "-->")
+        .rstrip()
     )
 
 
-def format_template(filename: str, **kwargs: dict[str, str]) -> None:
+def format_template(filename: str, **kwargs: str) -> None:
     with open(filename, encoding="UTF-8") as file:
-        cog.outl()
-        cog.outl(file.read().format(**kwargs))
+        cog.out(file.read().format(**kwargs))

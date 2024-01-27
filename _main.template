@@ -18,12 +18,10 @@
             <hr>
         </header>
         <main>
-
 {main}
         </main>
         <footer>
             <hr>
-
 {footer}
         </footer>
         <script src="/dark-mode.js"></script>

@@ -1,15 +1,15 @@
-            <!--[[[cog
-            import ssg
+<!--[[[cog
+import ssg
 
-            post_article = ssg.include_component(f"_{post_name}.article.component")
+post_article = ssg.generate_component(f"_{post_name}.article.component")
 
-            ssg.format_template(
-                "_post.main.template",
-                post_title=post_title,
-                post_author_link=post_author_link,
-                post_author_name=post_author_name,
-                post_date=post_date,
-                post_article=post_article
-            )
-            ]]]-->
-            <!--[[[end]]]-->
+ssg.format_template(
+    "_post.main.template",
+    post_title=post_title,
+    post_author_link=post_author_link,
+    post_author_name=post_author_name,
+    post_date=post_date,
+    post_article=post_article
+)
+]]]-->
+<!--[[[end]]]-->

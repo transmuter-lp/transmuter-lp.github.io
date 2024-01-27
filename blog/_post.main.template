@@ -1,27 +1,26 @@
-            <article>
-                <h2>{post_title}</h2>
-                <aside>
-                    <ul>
-                        <li>By <a href="{post_author_link}" target="_blank">{post_author_name}</a></li>
-                        <li><time>{post_date}</time></li>
-                    </ul>
-                </aside>
-
+<article>
+    <h2>{post_title}</h2>
+    <aside>
+        <ul>
+            <li>By <a href="{post_author_link}" target="_blank">{post_author_name}</a></li>
+            <li><time>{post_date}</time></li>
+        </ul>
+    </aside>
 {post_article}
-            </article>
-            <script src="https://giscus.app/client.js"
-                    data-repo="transmuter-lp/transmuter-lp.github.io"
-                    data-repo-id="R_kgDOLBlxcA"
-                    data-category="Announcements"
-                    data-category-id="DIC_kwDOLBlxcM4CcSch"
-                    data-mapping="title"
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="preferred_color_scheme"
-                    data-lang="en"
-                    data-loading="lazy"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+</article>
+<script src="https://giscus.app/client.js"
+        data-repo="transmuter-lp/transmuter-lp.github.io"
+        data-repo-id="R_kgDOLBlxcA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOLBlxcM4CcSch"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
