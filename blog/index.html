@@ -32,15 +32,17 @@ ssg.format_template("../_main.template", title=title, home=' href="/"', blog='',
 <ol>
 <!--
 import cog
-import os
 import ssg
 
-for filename in os.listdir("."):
-    if os.path.isfile(filename) and not filename.startswith("_") and filename.endswith(".html") and filename != "index.html":
-        post = ssg.generate_component(filename, post_full=False)
-        cog.outl('<li>')
-        cog.outl(post)
-        cog.outl('</li>')
+post_names = [
+    "test"
+]
+
+for post_name in post_names:
+    post = ssg.generate_component(f"{post_name}.html", post_full=False)
+    cog.outl('<li>')
+    cog.outl(post)
+    cog.outl('</li>')
 -->
 <li>
 <!--
