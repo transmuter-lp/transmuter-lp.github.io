@@ -1,6 +1,5 @@
 <ol>
 <!--[[[cog
-import cog
 import ssg
 
 post_names = [
