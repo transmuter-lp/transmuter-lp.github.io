@@ -4,11 +4,11 @@ import subprocess
 import cog
 
 
-def component_name():
+def component_name() -> str:
     return os.path.splitext(os.path.basename(cog.inFile))[0]
 
 
-def include_component(filename: str, **kwargs: dict[str, str]):
+def include_component(filename: str, **kwargs: dict[str, str]) -> str:
     args = ["cog", "-I", os.path.dirname(__file__)]
 
     for arg in kwargs.items():
@@ -24,7 +24,7 @@ def include_component(filename: str, **kwargs: dict[str, str]):
     )
 
 
-def format_template(filename: str, **kwargs):
+def format_template(filename: str, **kwargs: dict[str, str]) -> None:
     with open(filename, encoding="UTF-8") as file:
         cog.outl()
         cog.outl(file.read().format(**kwargs))
