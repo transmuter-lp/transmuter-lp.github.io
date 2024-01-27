@@ -1,11 +1,15 @@
             <!--[[[cog
-            import cog
-            import subprocess
+            import ssg
 
-            post_article = subprocess.run(["cog", f"_{post_name}.article.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+            post_article = ssg.include_component(f"_{post_name}.article.component")
 
-            with open("_post.main.template") as file:
-                cog.outl()
-                cog.outl(file.read().format(post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_article=post_article))
+            ssg.format_template(
+                "_post.main.template",
+                post_title=post_title,
+                post_author_link=post_author_link,
+                post_author_name=post_author_name,
+                post_date=post_date,
+                post_article=post_article
+            )
             ]]]-->
             <!--[[[end]]]-->

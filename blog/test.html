@@ -1,8 +1,7 @@
 <!--[[[cog
-import cog
-import subprocess
+import ssg
 
-post_name = ".".join(cog.inFile.split("/")[-1].split(".")[:-1])
+post_name = ssg.component_name()
 
 post_title = "Test"
 post_author_link = "https://github.com/natanjunges"
@@ -12,12 +11,17 @@ post_date = "Jan 8, 2024"
 title = f"{post_title} - The Transmuter Project Blog"
 page_title = "The Transmuter Project Blog"
 
-main = subprocess.run(["cog", "-D", f"post_name={post_name}", "-D", f"post_title={post_title}", "-D", f"post_author_link={post_author_link}", "-D", f"post_author_name={post_author_name}", "-D", f"post_date={post_date}", "_post.main.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
-footer = subprocess.run(["cog", "_footer.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+main = ssg.include_component(
+    "_post.main.component",
+    post_name=post_name,
+    post_title=post_title,
+    post_author_link=post_author_link,
+    post_author_name=post_author_name,
+    post_date=post_date
+)
+footer = ssg.include_component("_footer.component")
 
-with open("../_main.template") as file:
-    cog.outl()
-    cog.outl(file.read().format(title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer))
+ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
 ]]]-->
 
 <!DOCTYPE html>
@@ -42,14 +46,18 @@ with open("../_main.template") as file:
         <main>
 
             <!--
-            import cog
-            import subprocess
+            import ssg
 
-            post_article = subprocess.run(["cog", f"_{post_name}.article.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+            post_article = ssg.include_component(f"_{post_name}.article.component")
 
-            with open("_post.main.template") as file:
-                cog.outl()
-                cog.outl(file.read().format(post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_article=post_article))
+            ssg.format_template(
+                "_post.main.template",
+                post_title=post_title,
+                post_author_link=post_author_link,
+                post_author_name=post_author_name,
+                post_date=post_date,
+                post_article=post_article
+            )
             -->
 
             <article>

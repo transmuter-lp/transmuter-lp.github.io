@@ -1,16 +1,13 @@
 <!--[[[cog
-import cog
-import subprocess
+import ssg
 
 title = "The Transmuter Project"
 page_title = "The Transmuter Language Processing Infrastructure"
 
 main = ""
-footer = subprocess.run(["cog", "_footer.component"], capture_output=True, encoding="UTF-8").stdout.replace("\074!--\133\133\133cog", "\074!--").replace("\074!--\133\133\133end\135\135\135--\076", "\074!----\076").replace("\135\135\135--\076", "--\076")
+footer = ssg.include_component("_footer.component")
 
-with open("_main.template") as file:
-    cog.outl()
-    cog.outl(file.read().format(title=title, home='', blog=' href="/blog"', page_title=page_title, main=main, footer=footer))
+ssg.format_template("_main.template", title=title, home='', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
 ]]]-->
 
 <!DOCTYPE html>
