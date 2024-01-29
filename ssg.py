@@ -35,4 +35,4 @@ def format_template(filename: str, sections: list[int] = [], **kwargs: str) -> N
         else:
             template = "".join(map(template.split("<!--***-->\n").__getitem__, sections))
 
-        cog.out(template.format(**kwargs))
+        cog.out(eval(f'f"""{template}"""', kwargs))

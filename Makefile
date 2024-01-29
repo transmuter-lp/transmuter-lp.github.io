@@ -2,5 +2,5 @@
 
 all: index.html
 
-index.html: _main.template _footer.component
+index.html: ssg.py _main.template _footer.component
 	cog -r index.html
