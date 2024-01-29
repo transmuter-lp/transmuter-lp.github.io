@@ -1,6 +1,4 @@
 <!--[[[cog
-import ssg
-
 post_full = post_full != "False"
 post_title = post_title if post_full else f'<a href="{post_name}.html">{post_title}</a>'
 

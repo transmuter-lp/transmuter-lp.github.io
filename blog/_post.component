@@ -1,6 +1,4 @@
 <!--[[[cog
-import ssg
-
 post_title = ""
 post_author_link = ""
 post_author_name = ""

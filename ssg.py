@@ -18,7 +18,7 @@ def component_name() -> str:
 
 
 def generate_component(filename: str, sections: list[int] = [], **kwargs: str) -> str:
-    args = ["cog", "-d", "-I", os.path.dirname(__file__)]
+    args = ["cog", "-d", "-I", os.path.dirname(__file__), "-p", "import ssg"]
 
     for arg in kwargs.items():
         args.append("-D")
