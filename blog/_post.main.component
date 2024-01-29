@@ -4,7 +4,7 @@ import ssg
 post_full = post_full != "False"
 post_title = post_title if post_full else f'<a href="{post_name}.html">{post_title}</a>'
 
-post_article = ssg.generate_component(f"_{post_name}.article.component", [] if post_full else [0])
+post_article = ssg.load_component(f"_{post_name}.article.component", [] if post_full else [0])
 
 ssg.format_template(
     "_post.main.template",

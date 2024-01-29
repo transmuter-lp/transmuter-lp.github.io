@@ -5,7 +5,7 @@ title = "The Transmuter Project Blog"
 page_title = "The Transmuter Project Blog"
 
 main = ssg.generate_component("_index.main.component")
-footer = ssg.generate_component("_footer.component")
+footer = ssg.load_component("_footer.component")
 
 ssg.format_template("../_main.template", title=title, home=True, blog=False, page_title=page_title, main=main, footer=footer)
 ]]]-->

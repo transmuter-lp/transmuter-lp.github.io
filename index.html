@@ -5,7 +5,7 @@ title = "The Transmuter Project"
 page_title = "The Transmuter Language Processing Infrastructure"
 
 main = ""
-footer = ssg.generate_component("_footer.component")
+footer = ssg.load_component("_footer.component")
 
 ssg.format_template("_main.template", title=title, home=False, blog=True, page_title=page_title, main=main, footer=footer)
 ]]]-->

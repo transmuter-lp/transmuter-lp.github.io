@@ -23,7 +23,7 @@ if post_full:
     title = f"{post_title} - The Transmuter Project Blog"
     page_title = "The Transmuter Project Blog"
 
-    footer = ssg.generate_component("_footer.component")
+    footer = ssg.load_component("_footer.component")
 
     ssg.format_template("../_main.template", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer)
 else:
