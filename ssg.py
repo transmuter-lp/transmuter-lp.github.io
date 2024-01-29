@@ -9,7 +9,7 @@ def component_name() -> str:
 
 
 def generate_component(filename: str, sections: list[int] = [], **kwargs: str) -> str:
-    args = ["cog", "-I", os.path.dirname(__file__)]
+    args = ["cog", "-d", "-I", os.path.dirname(__file__)]
 
     for arg in kwargs.items():
         args.append("-D")
@@ -19,11 +19,11 @@ def generate_component(filename: str, sections: list[int] = [], **kwargs: str) -
     component = subprocess.run(args, capture_output=True, check=True, encoding="UTF-8").stdout
 
     if len(sections) == 0:
-        component = component.replace("<!--***-->\n", "<!--*-->\n")
+        component = component.replace("<!--***-->\n", "")
     else:
-        component = "<!--*-->\n".join(map(component.split("<!--***-->\n").__getitem__, sections))
+        component = "".join(map(component.split("<!--***-->\n").__getitem__, sections))
 
-    return component.replace("<!--[[[cog", "<!--").replace("<!--[[[end]]]-->", "<!---->").replace("]]]-->", "-->").rstrip()
+    return component.rstrip()
 
 
 def format_template(filename: str, sections: list[int] = [], **kwargs: str) -> None:
@@ -31,8 +31,8 @@ def format_template(filename: str, sections: list[int] = [], **kwargs: str) -> N
         template = file.read()
 
         if len(sections) == 0:
-            template = template.replace("<!--***-->\n", "<!--*-->\n")
+            template = template.replace("<!--***-->\n", "")
         else:
-            template = "<!--*-->\n".join(map(template.split("<!--***-->\n").__getitem__, sections))
+            template = "".join(map(template.split("<!--***-->\n").__getitem__, sections))
 
         cog.out(template.format(**kwargs))
