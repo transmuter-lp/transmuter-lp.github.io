@@ -25,7 +25,7 @@ if post_full:
 
     footer = ssg.generate_component("_footer.component")
 
-    ssg.format_template("../_main.template", title=title, home=' href="/"', blog=' href="/blog"', page_title=page_title, main=main, footer=footer)
+    ssg.format_template("../_main.template", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer)
 else:
     cog.out(main)
 ]]]-->
