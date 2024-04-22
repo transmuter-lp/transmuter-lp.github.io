@@ -6,25 +6,15 @@ post_date = "Jan 8, 2024"
 
 post_name = ssg.name()
 
-main = ssg.init(
-    "_post.main.html",
+cog.out(ssg.init(
+    "_post.html",
     post_full=not init,
     post_name=post_name,
     post_title=post_title,
     post_author_link=post_author_link,
     post_author_name=post_author_name,
     post_date=post_date
-)
-
-if not init:
-    title = f"{post_title} - The Transmuter Project Blog"
-    page_title = "The Transmuter Project Blog"
-
-    footer = ssg.text("_footer.html")
-
-    cog.out(ssg.init("../_template.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
-else:
-    cog.out(main)
+))
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
