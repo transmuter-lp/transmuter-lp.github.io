@@ -21,9 +21,9 @@ if post_full:
     title = f"{post_title} - The Transmuter Project Blog"
     page_title = "The Transmuter Project Blog"
 
-    footer = ssg.text("_footer.text")
+    footer = ssg.text("_footer.html")
 
-    cog.out(ssg.init("../_main.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
+    cog.out(ssg.init("../_template.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
 else:
     cog.out(main)
 ]]]-->
