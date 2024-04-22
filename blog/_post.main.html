@@ -1,3 +1,20 @@
+<!--[[[cog
+post_full = post_full == "True"
+post_title = post_title if post_full else f'<a href="{post_name}.html">{post_title}</a>'
+
+post_article = ssg.text(f"_{post_name}.article.html")
+
+if post_full:
+    post_article = post_article.split("\074!--***--\076\n", 1)[0]
+
+ssg.format(
+    post_title=post_title,
+    post_author_link=post_author_link,
+    post_author_name=post_author_name,
+    post_date=post_date,
+    post_article=post_article
+)
+]]]-->
 <hr>
 <article>
     <h2>{post_title}</h2>
@@ -9,7 +26,11 @@
     </aside>
 {post_article}
 </article>
-<!--***-->
+<!--[[[end]]]-->
+<!--[[[cog
+if post_full:
+    cog.out(cog.previous)
+<!--]]]-->
 <script src="https://giscus.app/client.js"
         data-repo="transmuter-lp/transmuter-lp.github.io"
         data-repo-id="R_kgDOLBlxcA"
@@ -26,3 +47,4 @@
         crossorigin="anonymous"
         async>
 </script>
+<!--[[[end]]]-->

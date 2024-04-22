@@ -4,11 +4,11 @@ post_author_link = "https://github.com/natanjunges"
 post_author_name = "Natan Junges"
 post_date = "Jan 8, 2024"
 
-post_full = post_full != "False" if "post_full" in globals() else True
-post_name = ssg.component_name()
+post_full = post_full == "True" if init else True
+post_name = ssg.name()
 
-main = ssg.generate_component(
-    "_post.main.component",
+main = ssg.init(
+    "_post.main.html",
     post_full=post_full,
     post_name=post_name,
     post_title=post_title,
@@ -21,9 +21,9 @@ if post_full:
     title = f"{post_title} - The Transmuter Project Blog"
     page_title = "The Transmuter Project Blog"
 
-    footer = ssg.load_component("_footer.component")
+    footer = ssg.text("_footer.html")
 
-    ssg.format_template("../_main.template", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer)
+    cog.out(ssg.init("../_main.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
 else:
     cog.out(main)
 ]]]-->

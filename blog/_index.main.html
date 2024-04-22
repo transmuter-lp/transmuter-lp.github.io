@@ -1,0 +1,15 @@
+<ol>
+<!--[[[cog
+post_names = [
+    "test"
+]
+
+for post_name in post_names:
+    post = ssg.init(f"{post_name}.html", post_full=False)
+    ssg.format(post=post)
+]]]-->
+<li>
+{post}
+</li>
+<!--[[[end]]]-->
+</ol>

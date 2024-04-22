@@ -8,7 +8,7 @@ def name() -> str:
     return os.path.splitext(os.path.basename(cog.inFile))[0]
 
 def init(filename: str, **kwargs: str) -> str:
-    args = ["cog", "-d", "-I", os.path.dirname(__file__), "-p", "import ssg"]
+    args = ["cog", "-d", "-I", os.path.dirname(__file__), "-p", "import ssg; init = True"]
 
     for arg in kwargs.items():
         args.append("-D")
