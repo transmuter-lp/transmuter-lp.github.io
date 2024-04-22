@@ -4,12 +4,11 @@ post_author_link = ""
 post_author_name = ""
 post_date = ""
 
-post_full = post_full == "True" if init else True
 post_name = ssg.name()
 
 main = ssg.init(
     "_post.main.html",
-    post_full=post_full,
+    post_full=not init,
     post_name=post_name,
     post_title=post_title,
     post_author_link=post_author_link,
@@ -17,7 +16,7 @@ main = ssg.init(
     post_date=post_date
 )
 
-if post_full:
+if not init:
     title = f"{post_title} - The Transmuter Project Blog"
     page_title = "The Transmuter Project Blog"
 
