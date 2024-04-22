@@ -2,6 +2,6 @@
 
 all: index.html
 
-index.html: ssg.py _main.template _footer.component
+index.html: ssg.py _main.html _footer.html
 	touch index.html
 	cog -p 'import ssg' -r index.html

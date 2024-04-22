@@ -3,9 +3,9 @@ title = "The Transmuter Project"
 page_title = "The Transmuter Language Processing Infrastructure"
 
 main = ""
-footer = ssg.load_component("_footer.component")
+footer = ssg.text("_footer.html")
 
-ssg.format_template("_main.template", title=title, home=False, blog=True, page_title=page_title, main=main, footer=footer)
+cog.out(ssg.init("_main.html", title=title, home=False, blog=True, page_title=page_title, main=main, footer=footer))
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
