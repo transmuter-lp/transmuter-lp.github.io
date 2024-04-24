@@ -12,6 +12,7 @@ ssg.format(
     post_author_link=post_author_link,
     post_author_name=post_author_name,
     post_date=post_date,
+    post_duration=post_duration,
     post_article=post_article
 )
 ]]]-->
@@ -22,6 +23,7 @@ ssg.format(
         <ul>
             <li>By <a href="{post_author_link}" target="_blank">{post_author_name}</a></li>
             <li><time>{post_date}</time></li>
+            <li>~{post_duration} min</li>
         </ul>
     </aside>
 {post_article}

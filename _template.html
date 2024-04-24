@@ -1,5 +1,8 @@
 <!--[[[cog
-ssg.format(title=title, home=home == "True", blog=blog == "True", page_title=page_title, main=main, footer=footer)
+home = home == "True"
+blog = blog == "True"
+
+ssg.format(title=title, home=home, blog=blog, page_title=page_title, main=main, footer=footer)
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
