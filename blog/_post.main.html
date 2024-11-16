@@ -2,19 +2,12 @@
 post_full = post_full == "True"
 post_title = post_title if post_full else f'<a href="{post_name}.html">{post_title}</a>'
 
-post_article = ssg.text(f"_{post_name}.article.html")
+post_article = ssg.include_static(f"_{post_name}.article.html")
 
 if not post_full:
     post_article = post_article.split("\074!--***--\076\n", 1)[0].rstrip()
 
-ssg.format(
-    post_title=post_title,
-    post_author_link=post_author_link,
-    post_author_name=post_author_name,
-    post_date=post_date,
-    post_duration=post_duration,
-    post_article=post_article
-)
+cog.out(ssg.format(cog.previous, post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_duration=post_duration, post_article=post_article))
 ]]]-->
 <hr>
 <article>

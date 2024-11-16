@@ -1,24 +1,15 @@
 <!--[[[cog
 post_full = post_full == "True"
 
-main = ssg.init(
-    "_post.main.html",
-    post_full=post_full,
-    post_name=post_name,
-    post_title=post_title,
-    post_author_link=post_author_link,
-    post_author_name=post_author_name,
-    post_date=post_date,
-    post_duration=post_duration
-)
+main = ssg.include_generate("_post.main.html", post_full=post_full, post_name=post_name, post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_duration=post_duration)
 
 if post_full:
     title = f"{post_title} - The Transmuter Project Blog"
     page_title = "The Transmuter Project Blog"
 
-    footer = ssg.text("_footer.html")
+    footer = ssg.include_static("_footer.html")
 
-    cog.out(ssg.init("../_template.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
+    cog.out(ssg.include_generate("../_template.html", title=title, home=True, blog=True, page_title=page_title, main=main, footer=footer))
 else:
     cog.out(main)
 ]]]-->

@@ -1,12 +1,13 @@
 <ol>
 <!--[[[cog
 post_names = [
-    "test"
+    "test",
 ]
 
 for post_name in post_names:
-    post = ssg.init(f"{post_name}.html")
-    ssg.format(post=post)
+    post = ssg.include_generate(f"{post_name}.html")
+
+    cog.out(ssg.format(cog.previous, post=post))
 ]]]-->
 <li>
 {post}

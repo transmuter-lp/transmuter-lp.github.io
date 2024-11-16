@@ -2,10 +2,10 @@
 title = "The Transmuter Project Blog"
 page_title = "The Transmuter Project Blog"
 
-main = ssg.init("_index.main.html")
-footer = ssg.text("_footer.html")
+main = ssg.include_generate("_index.main.html")
+footer = ssg.include_static("_footer.html")
 
-cog.out(ssg.init("../_template.html", title=title, home=True, blog=False, page_title=page_title, main=main, footer=footer))
+cog.out(ssg.include_generate("../_template.html", title=title, home=True, blog=False, page_title=page_title, main=main, footer=footer))
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

@@ -5,18 +5,7 @@ post_author_name = "Natan Junges"
 post_date = "Jan 8, 2024"
 post_duration = 0
 
-post_name = ssg.name()
-
-cog.out(ssg.init(
-    "_post.html",
-    post_full=not init,
-    post_name=post_name,
-    post_title=post_title,
-    post_author_link=post_author_link,
-    post_author_name=post_author_name,
-    post_date=post_date,
-    post_duration=post_duration
-))
+cog.out(ssg.include_generate("_post.html", post_full=not ssg.included, post_name=ssg.name(cog.inFile), post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_duration=post_duration))
 ]]]-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

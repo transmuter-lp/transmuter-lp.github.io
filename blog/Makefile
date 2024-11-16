@@ -6,8 +6,8 @@ all: index.html
 
 index.html: ../_template.html _index.main.html _footer.html $(posts)
 	touch index.html
-	cog -I ../ -p 'import ssg; init = False' -r index.html
+	cog -I ../ -p 'import ssg' -r index.html
 
 $(posts):%.html: ../_template.html _post.html _post.main.html _footer.html _%.article.html
 	touch $@
-	cog -I ../ -p 'import ssg; init = False' -r $@
+	cog -I ../ -p 'import ssg' -r $@
