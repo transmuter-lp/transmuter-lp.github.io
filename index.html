@@ -2,7 +2,7 @@
 title = "The Transmuter Project"
 page_title = "The Transmuter Language Processing Infrastructure"
 
-main = ""
+main = ssg.include_static("_index.main.html")
 footer = ssg.include_static("_footer.html")
 
 cog.out(ssg.include_generate("_template.html", title=title, home=False, blog=True, page_title=page_title, main=main, footer=footer))
@@ -13,7 +13,7 @@ cog.out(ssg.include_generate("_template.html", title=title, home=False, blog=Tru
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>The Transmuter Project</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap-reboot.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         <link href="/style.css" rel="stylesheet">
     </head>
     <body>
@@ -27,10 +27,67 @@ cog.out(ssg.include_generate("_template.html", title=title, home=False, blog=Tru
             <h1>The Transmuter Language Processing Infrastructure</h1>
         </header>
         <main>
+<p class="text-center py-5 display-2">Bring your languages to life.</p>
 
+<h2 class="display-4">Human-First</h2>
+<p class="lead">We carefully design and extensively document everything so you can easily learn, use and contribute. Need help? Get in touch.</p>
+
+<h2 class="display-4">Empowering</h2>
+<p class="lead">Go above and beyond with your creativity and we take care of the rest. Say goodbye to technical limitations.</p>
+
+<div class="row">
+    <div class="col-12 col-md">
+        <h3 class="display-6">Cutting-Edge</h3>
+        <p class="lead">Enjoy the best-in-class implementations, based on the latest research.</p>
+    </div>
+    <div class="col-12 col-md">
+        <h3 class="display-6">Flexible</h3>
+        <p class="lead">You are in control with self-contained, customizable and extensible tools.</p>
+    </div>
+    <div class="col-12 col-md">
+        <h3 class="display-6">Free and Open</h3>
+        <p class="lead">Help create the future today.</p>
+    </div>
+</div>
+
+<h2 class="display-4"><em>As in front-end, so in back-end.</em></h2>
+<p class="lead">Be it for natural or artificial languages, we got you covered through the entire language processing pipeline.</p>
+
+<div class="row">
+    <div class="col-12 col-md">
+        <h3 class="display-6">Integrated Development Environment</h3>
+        <ul>
+            <li>Syntax Highlighting</li>
+            <li>Autocompletion</li>
+            <li>Formatting</li>
+            <li>Linting</li>
+            <li>Static Analysis</li>
+            <li>Compilation</li>
+            <li>Building</li>
+            <li>Execution</li>
+            <li>Debugging</li>
+        </ul>
+    </div>
+    <div class="col-12 col-md">
+        <h3 class="display-6">Advanced Processing</h3>
+        <ul>
+            <li>Text/Binary Mapping</li>
+            <li>Translation/Transpilation</li>
+            <li>Decompilation</li>
+        </ul>
+    </div>
+    <div class="col-12 col-md">
+        <h3 class="display-6">Intelligence</h3>
+        <ul>
+            <li>Learning</li>
+            <li>Reasoning</li>
+            <li>Generation</li>
+        </ul>
+    </div>
+</div>
         </main>
         <footer>
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">The Transmuter Project Site</span> <span>&copy; 2024</span> by <span property="cc:attributionName">The Transmuter Project</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">The Transmuter Project Site</span> <span>&copy; 2024, 2025</span> by <span property="cc:attributionName">The Transmuter Project</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
         </footer>
         <script src="/dark-mode.js"></script>
     </body>
