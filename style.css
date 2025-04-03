@@ -23,15 +23,3 @@ article > aside > ul {
     padding-left: 0;
     margin-bottom: 2rem;
 }
-
-@media(prefers-color-scheme: light) {
-    .emgithub-file-dark {
-        display: none!important;
-    }
-}
-
-@media(prefers-color-scheme: dark) {
-    .emgithub-file-light {
-        display: none!important;
-    }
-}
