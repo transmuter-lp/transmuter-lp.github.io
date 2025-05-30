@@ -1,5 +1,5 @@
 <!--[[[cog
-post_full = post_full == "True"
+post_full = ssg.bool(post_full)
 
 main = ssg.include_generate("_post.main.html", post_full=post_full, post_name=post_name, post_title=post_title, post_author_link=post_author_link, post_author_name=post_author_name, post_date=post_date, post_duration=post_duration)
 

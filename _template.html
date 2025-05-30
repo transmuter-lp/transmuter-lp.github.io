@@ -1,6 +1,6 @@
 <!--[[[cog
-home = home == "True"
-blog = blog == "True"
+home = ssg.bool(home)
+blog = ssg.bool(blog)
 
 cog.out(ssg.format(cog.previous, title=title, home=home, blog=blog, page_title=page_title, main=main, footer=footer))
 ]]]-->
